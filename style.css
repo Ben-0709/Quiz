@@ -1,0 +1,297 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  user-select: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  color: #000;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+input,
+label,
+button {
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.quizBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-flow: column nowrap;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 650px;
+  padding: 10px 5px;
+  margin: -50px auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 15px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 2px solid #000;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+#questionsCount {
+  font-weight: 700;
+  font-size: 19px;
+  font-style: italic;
+  margin: 0 auto;
+  padding: 3px;
+  text-decoration: underline;
+}
+
+#quiz {
+  height: auto;
+  min-height: 150px;
+  max-height: 200px;
+  width: 100%;
+  max-width: max-content;
+  min-width: 100%;
+  margin: 0 auto;
+  padding: 3px;
+  height: auto;
+  min-height: 150px;
+  max-height: 200px;
+  width: 100%;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+}
+
+.question h3 {
+  margin: 0 auto 10px;
+  text-align: center;
+  height: 50px;
+  max-height: 50px;
+  min-height: 50px;
+}
+
+.optionsContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  gap: 4px;
+  margin: 0 auto;
+  width: auto;
+}
+
+.optionsContent > label > #optionValue {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.optionsContent > label > input[type="radio"] {
+  height: 20px;
+  width: 20px;
+  accent-color: currentColor;
+  color: green;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-flow: row nowrap;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+#buttons > button {
+  overflow: hidden;
+  padding: 3px 5px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  transform: scale(1.1);
+  /* transition: transform 0.4s ease; */
+}
+
+#buttons > button:active {
+  transform: scale(1);
+}
+
+#buttons > button:disabled {
+  color: white;
+  border: 2px solid #ccc;
+}
+
+#prevBtn {
+  background-color: red;
+}
+
+#nextBtn {
+  background-color: lawngreen;
+}
+
+#submitBtn {
+  background: mediumpurple;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+  position: relative;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: #fefefe;
+  margin: 9% auto 0;
+  padding: 20px;
+  border: 2px solid #000;
+  width: 500px;
+  height: 200px;
+  border-radius: 12px;
+}
+
+#close {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 91%;
+  font-size: 25px;
+  appearance: button;
+  padding: 2px 10px;
+  border-radius: 50px;
+  background: red;
+  border: 2px solid #000;
+}
+
+.questionBlock {
+  display: flex;
+  justify-content: center;
+  margin: 45px auto 0;
+  gap: 10px;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 300px;
+  max-width: max-content;
+}
+
+.questionBlock p {
+  font-weight: 600;
+  min-width: max-content;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  max-width: 100%;
+  gap: 10px;
+  margin: 30px auto 15px;
+}
+
+.modalButtons > button {
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 12px;
+  transform: scale(1.1);
+  transition: transform 0.4s linear;
+}
+
+.modalButtons > button:hover {
+  transform: scale(1);
+}
+
+#acceptButton {
+  background: lawngreen;
+  border: 2px solid lawngreen;
+}
+
+#cancelButton {
+  background: red;
+  border: 2px solid red;
+}
+
+#tryAgainBtn {
+  background: lightblue;
+}
+
+#result {
+  width: 100%;
+  margin: 12px auto;
+  max-width: max-content;
+  font-size: 22px;
+  font-weight: 900;
+  min-width: max-content;
+}
+
+.hideResult{
+    display: none;
+    animation: none;
+}
+
+.result{
+    animation: pulse 2s linear 10;
+    transform: scale(1);
+    transition: all 0.4s ease;
+    border:2px solid currentColor;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
